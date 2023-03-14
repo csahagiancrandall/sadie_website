@@ -85,7 +85,7 @@ main img.oval {
 
 .slider {
     -webkit-appearance: none;
-    width: 500px;
+    width: 65%;
     height: 10px;
     border-radius: 5px;
     background: #d3d3d3;
