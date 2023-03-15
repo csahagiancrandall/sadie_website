@@ -85,7 +85,7 @@ main img.oval {
 
 .slider {
     -webkit-appearance: none;
-    width: 65%;
+    width: 35%;
     height: 10px;
     border-radius: 5px;
     background: #d3d3d3;
@@ -109,6 +109,26 @@ main img.oval {
     cursor: pointer;
 }
 
+#totop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 36px;
+    border: none;
+    color: rgba(200, 166, 124, .5);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+  
+#totop:hover {
+    color: rgba(200, 166, 124, 1);
+    transition: 0.5s;
+  }
+
 .container {
     display: block;
     background-color: #faf6d7;
@@ -131,10 +151,18 @@ main img.oval {
 }
 
 .gallery img {
-    border-radius: 20px;
+    border-radius: 30px;
     width: 29%;
-    margin: 20px;
-    object-fit: contain;
+    padding: 20px;
+    object-fit: cover;
+}
+
+#portrait {
+    width: 23%;
+}
+
+#landscape {
+    width: 36.8%
 }
 
 .grid{
@@ -195,6 +223,10 @@ p {
 footer {
     padding: 20px 3%;
     font-family: 'Libre Bodoni', serif;
+}
+
+footer i {
+    color: #c8a67c
 }
 
 @keyframes anim {
