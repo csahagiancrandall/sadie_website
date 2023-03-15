@@ -8,7 +8,7 @@ header {
     text-align: center;
     background: #6a938b;
     padding-bottom: 20px;
-    color: #faf6d7;
+    color: #F6EFB7;
 }
 
 main {
@@ -32,6 +32,37 @@ nav ul li {
     border-radius: 5px;
 }
 
+.filters {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.filters ul li {
+    display: inline-block;
+    padding: 15px 20px;
+    /* margin: 25px 25px; */
+}
+
+.filters ul li button {
+    background-color: #c8a67c;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Libre Bodoni', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #F6EFB7;
+    width: 109.16px;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.filters ul li button:hover {
+    opacity: 1;
+}
+
 a {
     color: black;
 }
@@ -39,12 +70,12 @@ a {
 nav a {
     /* Set text decoration*/
     text-decoration: none;
-    color: #faf6d7;
+    color: #F6EFB7;
 }
 
 a:visited{
     /* Set color */
-    color: #faf6d7;
+    color: #F6EFB7;
 }
 
 nav a.current{
@@ -131,7 +162,7 @@ main img.oval {
 
 .container {
     display: block;
-    background-color: #faf6d7;
+    background-color: #F6EFB7;
     border-radius: 30px;
     width: 60%;
     height: 400px;
@@ -146,22 +177,21 @@ main img.oval {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background: #faf6d7;
+    background: #F6EFB7;
     border-radius: 30px;
 }
 
 .gallery img {
     border-radius: 30px;
-    width: 29%;
     padding: 20px;
     object-fit: cover;
 }
 
-#portrait {
+.portrait {
     width: 23%;
 }
 
-#landscape {
+.landscape {
     width: 36.8%
 }
 
@@ -179,7 +209,7 @@ main img.oval {
     /* border: 3px solid black; */
     border-radius: 20px;
     padding: 10px;
-    background-color: #faf6d7;
+    background-color: #F6EFB7;
     display: grid;
     grid-template-columns: 60% 40%;
 }
@@ -239,7 +269,7 @@ footer i {
 }
 
 .anim {
-    animation: anim 7s;
+    animation: anim .5s;
     background-image: url("../images/wallpaper.jpg")
 }
 

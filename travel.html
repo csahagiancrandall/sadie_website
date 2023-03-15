@@ -35,22 +35,31 @@
     <div class="slidecontainer">
       <input class="slider" type = "range" value="23" oninput = "changeSize(this)" min="5" max="100" step = "1"></input>
     </div>
+    <div class="filters">
+      <ul>
+        <li><button onclick="show_all()">All</button></li>
+        <li><button onclick="show_headshot()">Headshots</button></li>
+        <li><button onclick="show_friends()">Friends</button></li>
+        <li><button onclick="show_selfie()">Selfies</button></li>
+        <li><button onclick="show_family()">Family</button></li>
+      </ul>
+    </div>
       <div class="gallery">
-        <img src="images/pastel_sadie_2.png" id="portrait">
-        <img src="images/star_jumping_sadie_cropped.png" id="landscape">
-        <img src="images/pastel_star_jumping_sadie.png" id="landscape">
-        <img src="images/sadie.jpg" id="portrait">
-        <img src="images/jacket_sadie.jpg" id="portrait">
-        <img src="images/glitter_sadie.jpg" id="portrait">
-        <img src="images/blue_eye_sadie.jpg" id="portrait">
-        <img src="images/facebook_sadie.jpg" id="portrait">
-        <img src="images/pastel_star_jumping_sadie_cropped.png" id="landscape">
-        <img src="images/black_sadie.png" id="portrait">
-        <img src="images/instagram_sadie.jpg" id="portrait">
-        <img src="images/background_sadie.png" id="portrait">
-        <img src="images/golden_gate_sadie.jpg" id="landscape">
-        <img src="images/glowing_sadie.png" id="portrait">
-        <img src="images/star_jumping_sadie_cropped.png" id="landscape">
+        <img src="images/pastel_sadie_2.png" class="portrait headshot">
+        <img src="images/star_jumping_sadie_cropped.png" class="landscape friends">
+        <img src="images/pastel_star_jumping_sadie.png" class="landscape friends">
+        <img src="images/sadie.jpg" class="portrait headshot">
+        <img src="images/jacket_sadie.jpg" class="portrait selfie">
+        <img src="images/glitter_sadie.jpg" class="portrait friends selfie">
+        <img src="images/blue_eye_sadie.jpg" class="portrait selfie">
+        <img src="images/facebook_sadie.jpg" class="portrait selfie">
+        <img src="images/pastel_star_jumping_sadie_cropped.png" class="landscape friends">
+        <img src="images/black_sadie.png" class="portrait headshot">
+        <img src="images/instagram_sadie.jpg" class="portrait selfie">
+        <img src="images/background_sadie.png" class="portrait headshot">
+        <img src="images/golden_gate_sadie.jpg" class="landscape family">
+        <img src="images/glowing_sadie.png" class="portrait headshot">
+        <img src="images/star_jumping_sadie_cropped.png" class="landscape friends">
 
       </div>
     </main>
