@@ -27,6 +27,7 @@ nav {
     display: flex;
     margin: auto;
     justify-content: space-evenly;
+    position: relative;
 }
 
 nav ul li {
@@ -82,21 +83,6 @@ nav a.current{
 
 .filters ul li button:hover {
     opacity: 1;
-}
-
-.theme {
-    margin-top: 10px;
-}
-
-#theme {
-    border: none;
-    color: var(--heart-accent);    
-    cursor: pointer;
-    border-radius: 4px;
-    background-color: transparent;
-    font-family: 'Libre Bodoni', serif;
-    font-size: 100%;
-    padding: 0px;
 }
 
 a {
@@ -168,6 +154,20 @@ main img.oval {
 .slider::-webkit-slider-thumb:hover {
     opacity: 1;
 }
+  
+#theme {
+    display: block;
+    border: none;
+    color: var(--font);    
+    cursor: pointer;
+    font-family: 'Libre Bodoni', serif;
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    background-color: transparent;
+}
 
 #totop {
     display: none;
@@ -183,7 +183,7 @@ main img.oval {
     padding: 15px;
     border-radius: 4px;
     background-color: transparent;
-  }
+}
   
 #totop:hover {
     opacity: 1;
