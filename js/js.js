@@ -94,6 +94,66 @@ function show_family() {
     }
 }
 
+// Change Color Theme
+function changeTheme() {
+    console.log("Color scheme changed!")
+    var body = document.querySelector("body")
+    if (body.classList.contains("theme4")) {
+        body.classList.add("theme5")
+        body.classList.remove("theme4")
+        document.documentElement.style.setProperty('--back', '#fff');
+        document.documentElement.style.setProperty('--head', '#fff');
+        document.documentElement.style.setProperty('--accent', '#fff');
+        document.documentElement.style.setProperty('--font', '#000');
+        document.documentElement.style.setProperty('--heart-accent', '#f00');        
+    }
+    else if (body.classList.contains("theme5")) {
+        body.classList.add("theme6")
+        body.classList.remove("theme5")
+        document.documentElement.style.setProperty('--back', '#000');
+        document.documentElement.style.setProperty('--head', '#000');
+        document.documentElement.style.setProperty('--accent', '#000');
+        document.documentElement.style.setProperty('--font', '#fff');
+        document.documentElement.style.setProperty('--heart-accent', '#f00');        
+    }
+    else if (body.classList.contains("theme6")) {
+        body.classList.add("theme1")
+        body.classList.remove("theme6")
+        document.documentElement.style.setProperty('--back', '#6a938b');
+        document.documentElement.style.setProperty('--head', '#6a938b');
+        document.documentElement.style.setProperty('--accent', '#c8a67c');
+        document.documentElement.style.setProperty('--font', '#f6d9cb');
+        document.documentElement.style.setProperty('--heart-accent', '#c8a67c');        
+        }
+    else if (body.classList.contains("theme1")) {
+        body.classList.add("theme2")
+        body.classList.remove("theme1")
+        document.documentElement.style.setProperty('--back', '#faf6d7');
+        document.documentElement.style.setProperty('--head', '#faf6d7');
+        document.documentElement.style.setProperty('--accent', '#f6d9cb');
+        document.documentElement.style.setProperty('--font', '#c8a67c');
+        document.documentElement.style.setProperty('--heart-accent', '#f6d9cb');        
+    }
+    else if (body.classList.contains("theme2")) {
+        body.classList.add("theme3")
+        body.classList.remove("theme2")
+        document.documentElement.style.setProperty('--back', '#8BE4DE');
+        document.documentElement.style.setProperty('--head', '#8BE4DE');
+        document.documentElement.style.setProperty('--accent', '#FFBF69');
+        document.documentElement.style.setProperty('--font', '#FFFFFF');
+        document.documentElement.style.setProperty('--heart-accent', '#FFBF69');        
+    }
+    else if (body.classList.contains("theme3")) {
+        body.classList.add("theme4")
+        body.classList.remove("theme3")
+        document.documentElement.style.setProperty('--back', '#364652');
+        document.documentElement.style.setProperty('--head', '#d9e5d6ff');
+        document.documentElement.style.setProperty('--accent', '#0fa3b1ff');
+        document.documentElement.style.setProperty('--font', '#f7a072ff');
+        document.documentElement.style.setProperty('--heart-accent', '#0fa3b1ff');        
+    }
+}
+
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {
     scrollFunction()

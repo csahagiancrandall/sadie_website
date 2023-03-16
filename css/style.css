@@ -1,14 +1,22 @@
+:root {
+    --back: #fff;
+    --head: #fff;
+    --accent: #fff;
+    --font: #000;
+    --heart-accent: #f00;
+}  
+
 body{
    /* Set line spacing */
     line-height: 1;
-    background-color: #f0c1aa;
+    background-color: var(--back);
 }
 
 header {
     text-align: center;
-    background: #6a938b;
+    background: var(--head);
     padding-bottom: 20px;
-    color: #F6EFB7;
+    color: var(--font);
 }
 
 main {
@@ -28,10 +36,23 @@ nav ul li {
     display: inline-block;
     padding: 15px 20px;
     margin: 25px 25px;
-    background-color: #c8a67c;
+    background-color: var(--accent);
     border-radius: 5px;
 }
 
+nav a {
+    /* Set text decoration*/
+    text-decoration: none;
+    color: var(--font);
+}
+
+nav a.current{
+    /* Set text decoration, transformation, and underline properties */
+        text-transform: uppercase;
+        text-decoration: underline wavy var(--font) 2px;
+        text-underline-offset: 5px;
+}
+    
 .filters {
     display: flex;
     justify-content: space-evenly;
@@ -45,7 +66,7 @@ nav ul li {
 }
 
 .filters ul li button {
-    background-color: #c8a67c;
+    background-color: var(--accent);
     border: none;
     cursor: pointer;
     padding: 15px;
@@ -53,9 +74,9 @@ nav ul li {
     font-family: 'Libre Bodoni', serif;
     font-size: 16px;
     font-weight: 700;
-    color: #F6EFB7;
+    color: var(--font);
     width: 109.16px;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: 0.2s;
 }
 
@@ -63,31 +84,34 @@ nav ul li {
     opacity: 1;
 }
 
+.theme {
+    margin-top: 10px;
+}
+
+#theme {
+    border: none;
+    color: var(--heart-accent);    
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: transparent;
+    font-family: 'Libre Bodoni', serif;
+    font-size: 100%;
+    padding: 0px;
+}
+
 a {
     color: black;
 }
 
-nav a {
-    /* Set text decoration*/
-    text-decoration: none;
-    color: #F6EFB7;
-}
-
 a:visited{
     /* Set color */
-    color: #F6EFB7;
-}
-
-nav a.current{
-    /* Set text decoration, transformation, and underline properties */
-    text-transform: uppercase;
-    text-decoration: underline wavy black 2px;
-    text-underline-offset: 5px;
+    color: var(--font);
 }
 
 h1, h2, h3 {
     font-family: 'Libre Bodoni', serif;
     font-weight: 700;
+    color: var(--font);
 }
 
 h1 {
@@ -119,11 +143,10 @@ main img.oval {
     width: 35%;
     height: 10px;
     border-radius: 5px;
-    background: #d3d3d3;
+    background: var(--font);
     outline: none;
-    opacity: 0.7;
-    /* -webkit-transition: .2s; */
-    transition: opacity .2s;
+    opacity: 0.5;
+    transition: .2s;
   }
   
 .slider:hover {
@@ -136,8 +159,14 @@ main img.oval {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #c8a67c;
+    background: var(--font);
+    opacity: 1;
     cursor: pointer;
+    transition: .2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    opacity: 1;
 }
 
 #totop {
@@ -148,7 +177,8 @@ main img.oval {
     z-index: 99;
     font-size: 36px;
     border: none;
-    color: rgba(200, 166, 124, .5);
+    color: var(--heart-accent);
+    opacity: .5;
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
@@ -156,28 +186,29 @@ main img.oval {
   }
   
 #totop:hover {
-    color: rgba(200, 166, 124, 1);
+    opacity: 1;
     transition: 0.5s;
   }
 
 .container {
     display: block;
-    background-color: #F6EFB7;
+    background-color: var(--font);
     border-radius: 30px;
     width: 60%;
     height: 400px;
-    margin: 30px auto;
+    margin: 5px auto 50px;
     outline: dotted;
     outline-offset: 7px;
     outline-width: 5px;
-    text-align: center;
+    outline-color: var(--font);
+    text-align: center; 
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background: #F6EFB7;
+    background: var(--font);
     border-radius: 30px;
 }
 
@@ -209,7 +240,7 @@ main img.oval {
     /* border: 3px solid black; */
     border-radius: 20px;
     padding: 10px;
-    background-color: #F6EFB7;
+    background-color: var(--font);
     display: grid;
     grid-template-columns: 60% 40%;
 }
@@ -241,6 +272,7 @@ p {
     margin: 10px 0px 0px;
     font-family: 'Libre Bodoni', serif;
     font-weight: 400;
+    color: var(--font);
 }
 
 .oval {
@@ -253,10 +285,11 @@ p {
 footer {
     padding: 20px 3%;
     font-family: 'Libre Bodoni', serif;
+    color: var(--font);
 }
 
 footer i {
-    color: #c8a67c
+    color: var(--heart-accent)
 }
 
 @keyframes anim {
