@@ -121,7 +121,7 @@ function changeTheme() {
         body.classList.remove("theme6")
         document.documentElement.style.setProperty('--back', '#6a938b');
         document.documentElement.style.setProperty('--head', '#6a938b');
-        document.documentElement.style.setProperty('--accent', '#c8a67c');
+        document.documentElement.style.setProperty('--accent', '#6a938b');
         document.documentElement.style.setProperty('--font', '#f6d9cb');
         document.documentElement.style.setProperty('--heart-accent', '#c8a67c');        
         }
