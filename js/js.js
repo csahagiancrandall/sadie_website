@@ -159,3 +159,18 @@ window.onscroll = function() {
     scrollFunction()
 };
 
+var oldScrollY = window.scrollY;
+
+window.addEventListener('scroll', function(element) {
+    console.log(window.scrollY)
+    if (window.scrollY < oldScrollY) {
+        console.log(window.scrollY)
+        console.log('scrolling up')
+        oldScrollY = window.scrollY;
+    }
+    else {
+        console.log(window.scrollY)
+        console.log('scrolling down')
+        oldScrollY = window.scrollY;
+    }
+})
