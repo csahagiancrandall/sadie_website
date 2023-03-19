@@ -175,13 +175,13 @@ const slideGallery = document.querySelector('.slides');
 const slides = slideGallery.querySelectorAll('div');
 const thumbnailContainer = document.querySelector('.thumbnails');
 const slideCount = slides.length;
-const slideWidth = 720;
 
 const highlightThumbnail = () => {
     thumbnailContainer
         .querySelectorAll('div.highlighted')
         .forEach(el => el.classList.remove('highlighted'));
     console.log(slideGallery.scrollLeft);
+    const slideWidth = document.querySelector('.slides iframe').clientWidth
     const index = Math.floor(slideGallery.scrollLeft / slideWidth);
     thumbnailContainer
         .querySelector(`div[data-id="${index}"]`)
@@ -197,6 +197,7 @@ const highlightThumbnail = () => {
 
 const scrollToElement = el => {
   const index = parseInt(el.dataset.id, 10);
+  const slideWidth = document.querySelector('.slides iframe').clientWidth
   slideGallery.scrollTo(index * slideWidth, 0);
 };
 
