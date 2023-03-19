@@ -161,16 +161,83 @@ window.onscroll = function() {
 
 var oldScrollY = window.scrollY;
 
-window.addEventListener('scroll', function(element) {
-    console.log(window.scrollY)
-    if (window.scrollY < oldScrollY) {
-        console.log(window.scrollY)
-        console.log('scrolling up')
-        oldScrollY = window.scrollY;
-    }
-    else {
-        console.log(window.scrollY)
-        console.log('scrolling down')
-        oldScrollY = window.scrollY;
-    }
-})
+var songPageIndex = 1;
+var sections = document.querySelectorAll("section");
+console.log(sections);
+
+window.addEventListener('wheel', function(element) {
+    console.log(element.wheelDelta);
+});
+
+// Songs page
+
+const slideGallery = document.querySelector('.slides');
+const slides = slideGallery.querySelectorAll('div');
+const thumbnailContainer = document.querySelector('.thumbnails');
+const slideCount = slides.length;
+const slideWidth = 720;
+
+const highlightThumbnail = () => {
+  thumbnailContainer
+    .querySelectorAll('div.highlighted')
+    .forEach(el => el.classList.remove('highlighted'));
+    console.log(slideGallery.scrollLeft);
+  const index = Math.floor(slideGallery.scrollLeft / slideWidth);
+  thumbnailContainer
+    .querySelector(`div[data-id="${index}"]`)
+    .classList.add('highlighted');
+    console.log(index);
+};
+
+const scrollToElement = el => {
+  const index = parseInt(el.dataset.id, 10);
+  slideGallery.scrollTo(index * slideWidth, 0);
+};
+
+thumbnailContainer.innerHTML += [...slides]
+  .map((slide, i) => `<div data-id="${i}"></div>`)
+  .join('');
+
+thumbnailContainer.querySelectorAll('div').forEach(el => {
+  el.addEventListener('click', () => scrollToElement(el));
+});
+
+slideGallery.addEventListener('scroll', e => highlightThumbnail());
+
+highlightThumbnail();
+
+// window.addEventListener('scroll', function(element) {
+//     console.log(window.scrollY)
+//     if (window.scrollY < oldScrollY) {
+//         console.log(window.scrollY)
+//         console.log('scrolling up')
+//         oldScrollY = window.scrollY;
+
+//         // if (songPageIndex < 1) {
+//         //     return;
+//         // }
+//         // songPageIndex--;
+//         // sections.forEach((section, i) => {
+//         //     if (i === songPageIndex) {
+//         //         console.log("scrolling section " + i + " into view");
+//         //         section.scrollIntoView({behavior: 'smooth'});
+//         //     }
+//         // })
+//     }
+//     else if (window.scrollY > oldScrollY) {
+//         console.log(window.scrollY)
+//         console.log('scrolling down')
+//         oldScrollY = window.scrollY;
+//         sections[0].scrollIntoView({behavior: 'smooth'});
+//         // if (index > 2) {
+//         //     return;
+//         // }
+//         // songPageIndex++;
+//         // sections.forEach((section, i) => {
+//         //     if (i === songPageIndex) {
+//         //         console.log("scrolling section " + i + " into view");
+//         //         section.scrollIntoView({behavior: 'smooth'});
+//         //     }
+//         // })
+//     }
+// });
