@@ -19,6 +19,19 @@ function changeSize(element) {
     }
 }
 
+function changeHeaderFontSize() {
+    var width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+    console.log(width);
+    if (width < 440) {
+        console.log("Making Font Size Smaller!")
+        document.querySelectorAll('nav ul li').forEach(el => el.style.fontSize = "20px");
+    }
+}
+
+changeHeaderFontSize()
+
 function test() {
     console.log("Working!");
 }
