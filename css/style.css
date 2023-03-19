@@ -257,8 +257,8 @@ main img.oval {
     display: block;
     background-color: var(--font);
     border-radius: 30px;
-    width: 60%;
-    height: 400px;
+    width: 80vw;
+    height: 60vw;
     margin: 5px auto 50px;
     outline: dotted;
     outline-offset: 7px;
