@@ -178,15 +178,21 @@ const slideCount = slides.length;
 const slideWidth = 720;
 
 const highlightThumbnail = () => {
-  thumbnailContainer
-    .querySelectorAll('div.highlighted')
-    .forEach(el => el.classList.remove('highlighted'));
+    thumbnailContainer
+        .querySelectorAll('div.highlighted')
+        .forEach(el => el.classList.remove('highlighted'));
     console.log(slideGallery.scrollLeft);
-  const index = Math.floor(slideGallery.scrollLeft / slideWidth);
-  thumbnailContainer
-    .querySelector(`div[data-id="${index}"]`)
-    .classList.add('highlighted');
+    const index = Math.floor(slideGallery.scrollLeft / slideWidth);
+    thumbnailContainer
+        .querySelector(`div[data-id="${index}"]`)
+        .classList.add('highlighted');
     console.log(index);
+    // slides
+    //     .querySelectorAll('iframe.highlighted')
+    //     .forEach(el => el.classList.remove('highlighted'));
+    // slides
+    //     .querySelector(`iframe[data-id="${index}"]`)
+    //     .classList.add('highlighted');
 };
 
 const scrollToElement = el => {
@@ -195,7 +201,7 @@ const scrollToElement = el => {
 };
 
 thumbnailContainer.innerHTML += [...slides]
-  .map((slide, i) => `<div data-id="${i}"></div>`)
+  .map((slide, i) => `<div data-id="${i}" class=""></div>`)
   .join('');
 
 thumbnailContainer.querySelectorAll('div').forEach(el => {
