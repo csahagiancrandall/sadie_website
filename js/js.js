@@ -24,9 +24,21 @@ function changeHeaderFontSize() {
     || document.documentElement.clientWidth
     || document.body.clientWidth;
     console.log(width);
-    if (width < 440) {
+    if (width <= 440) {
         console.log("Making Font Size Smaller!")
         document.querySelectorAll('nav ul li').forEach(el => el.style.fontSize = "20px");
+    }
+    if (width <= 370) {
+        console.log("Making Font Size Smallerer!")
+        document.querySelectorAll('nav ul li').forEach(el => el.style.fontSize = "18px");
+    }
+    if (width <= 336) {
+        console.log("Making Font Size Smallest!")
+        document.querySelectorAll('nav ul li').forEach(el => el.style.fontSize = "16px");
+    }
+    if (width < 304) {
+        console.log("Making Font Size Smallest!")
+        document.querySelectorAll('nav ul li').forEach(el => el.style.fontSize = "14px");
     }
 }
 
