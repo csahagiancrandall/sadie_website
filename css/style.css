@@ -189,6 +189,7 @@ main img.oval {
 
 .slider {
     -webkit-appearance: none;
+    appearance: none;
     width: 35%;
     height: 10px;
     border-radius: 5px;
@@ -374,4 +375,40 @@ footer i {
     animation: none;
     background-image: url("../images/wallpaper.jpg")
   }
+}
+
+@media (min-width: 500px) {
+    nav ul li {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 500px) {
+    nav ul li {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 370px) and (max-width: 440px) {
+    nav ul li {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 336px) and (max-width: 370px) {
+    nav ul li {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 304px) and (max-width: 336px) {
+    nav ul li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 304px) {
+    nav ul li {
+        font-size: 14px;
+    }
 }
