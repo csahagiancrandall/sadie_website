@@ -356,27 +356,6 @@ footer i {
     color: var(--heart-accent)
 }
 
-@keyframes anim {
-  from {
-    opacity: 0%;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-
-.anim {
-    animation: anim .5s;
-    background-image: url("../images/wallpaper.jpg")
-}
-
-@media (prefers-reduced-motion) {
-  .anim {
-    animation: none;
-    background-image: url("../images/wallpaper.jpg")
-  }
-}
-
 @media (min-width: 500px) {
     nav ul li {
         font-size: 28px;
