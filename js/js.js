@@ -109,18 +109,18 @@ function changeTheme() {
         document.documentElement.style.setProperty('--heart-accent', '#f00');        
     }
     else if (body.classList.contains("theme5")) {
-        body.classList.add("theme6")
+        body.classList.add("theme0")
         body.classList.remove("theme5")
-        localStorage.setItem("colorTheme", "theme6")
+        localStorage.setItem("colorTheme", "theme0")
         document.documentElement.style.setProperty('--back', '#000');
         document.documentElement.style.setProperty('--head', '#000');
         document.documentElement.style.setProperty('--accent', '#000');
         document.documentElement.style.setProperty('--font', '#fff');
         document.documentElement.style.setProperty('--heart-accent', '#f00');        
     }
-    else if (body.classList.contains("theme6")) {
+    else if (body.classList.contains("theme0")) {
         body.classList.add("theme1")
-        body.classList.remove("theme6")
+        body.classList.remove("theme0")
         localStorage.setItem("colorTheme", "theme1")
         document.documentElement.style.setProperty('--back', '#6a938b');
         document.documentElement.style.setProperty('--head', '#6a938b');
@@ -152,11 +152,11 @@ function changeTheme() {
         body.classList.add("theme4")
         body.classList.remove("theme3")
         localStorage.setItem("colorTheme", "theme4")
-        document.documentElement.style.setProperty('--back', '#364652');
-        document.documentElement.style.setProperty('--head', '#d9e5d6ff');
-        document.documentElement.style.setProperty('--accent', '#0fa3b1ff');
-        document.documentElement.style.setProperty('--font', '#f7a072ff');
-        document.documentElement.style.setProperty('--heart-accent', '#0fa3b1ff');        
+        document.documentElement.style.setProperty('--back', '#d9e5d6');
+        document.documentElement.style.setProperty('--head', '#d9e5d6');
+        document.documentElement.style.setProperty('--accent', '#F9BE9F');
+        document.documentElement.style.setProperty('--font', '#364652');
+        document.documentElement.style.setProperty('--heart-accent', '#f7a072');        
     }
 }
 
@@ -172,8 +172,8 @@ function initializeTheme(theme) {
         document.documentElement.style.setProperty('--font', '#000');
         document.documentElement.style.setProperty('--heart-accent', '#f00');        
     }
-    else if (theme == "theme6") {
-        body.classList.add("theme6")
+    else if (theme == "theme0") {
+        body.classList.add("theme0")
         console.log("theme changed to " + theme)
         document.documentElement.style.setProperty('--back', '#000');
         document.documentElement.style.setProperty('--head', '#000');
@@ -227,8 +227,9 @@ function loadTheme() {
         initializeTheme(theme)
     }
     else {
-        console.log("No color theme found. Setting to random theme.");
-        let theme = "theme" + Math.random().toString()
+        let random = Math.floor(Math.random() * 6).toString()
+        console.log("No color theme found. Setting to random - theme" + random);
+        let theme = "theme" + random
         localStorage.setItem("colorTheme", theme)
         initializeTheme(theme)
     }
