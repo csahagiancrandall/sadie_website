@@ -211,11 +211,11 @@ function initializeTheme(theme) {
     else if (theme == "theme4") {
         body.classList.add("theme4")
         console.log("theme changed to " + theme)
-        document.documentElement.style.setProperty('--back', '#364652');
-        document.documentElement.style.setProperty('--head', '#d9e5d6ff');
-        document.documentElement.style.setProperty('--accent', '#0fa3b1ff');
-        document.documentElement.style.setProperty('--font', '#f7a072ff');
-        document.documentElement.style.setProperty('--heart-accent', '#0fa3b1ff');        
+        document.documentElement.style.setProperty('--back', '#d9e5d6');
+        document.documentElement.style.setProperty('--head', '#d9e5d6');
+        document.documentElement.style.setProperty('--accent', '#F9BE9F');
+        document.documentElement.style.setProperty('--font', '#364652');
+        document.documentElement.style.setProperty('--heart-accent', '#f7a072');        
     }
 }
 

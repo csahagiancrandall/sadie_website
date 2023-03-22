@@ -321,7 +321,8 @@ nav a.current{
     background-color: var(--accent);
     border: none;
     cursor: pointer;
-    padding: 15px;
+    padding: 1vh 1vw 1vh;
+    margin: 2vh 0vw 1vh;
     border-radius: 4px;
     font-family: 'Libre Bodoni', serif;
     font-size: 16px;
