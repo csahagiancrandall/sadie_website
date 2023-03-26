@@ -444,7 +444,7 @@ main img.oval {
     background-color: var(--font);
     border-radius: 30px;
     width: 80vw;
-    height: 60vw;
+    height: 45vw;
     margin: 5px auto 50px;
     outline: dotted;
     outline-offset: 7px;
@@ -513,10 +513,15 @@ main img.oval {
 }
 
 p + p {
-     /* Set indentation */
-     text-indent: 20px;
-  }
+  /* Set indentation */
+  text-indent: 20px;
+}
   
+h3 + div p {
+  /* Set indentation */
+  text-indent: 20px;
+}
+ 
 p {
     margin: 10px 0px 0px;
     font-family: 'Libre Bodoni', serif;
