@@ -31,9 +31,13 @@ function scrollFunction() {
   }
 }
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction()
+};
+
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-//   document.body.scrollTop = 0;
   document.body.scrollIntoView({behavior: 'smooth', block: 'start'});
   document.documentElement.scrollIntoView({behavior: 'smooth', block: 'start'});
 }
@@ -237,63 +241,85 @@ function loadTheme() {
 
 loadTheme()
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {
-    scrollFunction()
-};
+//Songs Page
 
-var oldScrollY = window.scrollY;
+$(function(){
+    if($('body').is('.songs-page')){
+        console.log("Songs Page!");
+        const slideGallery = document.querySelector('.slides');
+        const slides = slideGallery.querySelectorAll('div');
+        const thumbnailContainer = document.querySelector('.thumbnails');
 
-var songPageIndex = 1;
-var sections = document.querySelectorAll("section");
-console.log(sections);
+        const highlightThumbnail = () => {
+            thumbnailContainer
+                .querySelectorAll('div.highlighted')
+                .forEach(el => el.classList.remove('highlighted'));
+            const slideWidth = document.querySelector('.slides iframe').clientWidth
+            const excess = document.querySelector('.slides div').clientWidth - document.querySelector('.slides iframe').clientWidth
+            const index = Math.floor(slideGallery.scrollLeft / slideWidth);
+            thumbnailContainer
+                .querySelector(`div[data-id="${index}"]`)
+                .classList.add('highlighted');
+        };
 
-window.addEventListener('wheel', function(element) {
-    console.log(element.wheelDelta);
+        const scrollToElement = el => {
+            const index = parseInt(el.dataset.id, 10);
+            const slideWidth = document.querySelector('.slides iframe').clientWidth
+            slideGallery.scrollTo({left: index * (slideWidth + slideWidth*3/70), behavior: 'smooth'});
+        };
+
+        thumbnailContainer.innerHTML += [...slides]
+        .map((slide, i) => `<div data-id="${i}" class=""></div>`)
+        .join('');
+
+        thumbnailContainer.querySelectorAll('div').forEach(el => {
+            el.addEventListener('click', () => scrollToElement(el));
+        });
+
+        slideGallery.addEventListener('scroll', e => highlightThumbnail());
+
+        highlightThumbnail();
+    }
 });
 
-// Songs page
-const slideGallery = document.querySelector('.slides');
-const slides = slideGallery.querySelectorAll('div');
-const thumbnailContainer = document.querySelector('.thumbnails');
-const slideCount = slides.length;
+// flipbook 3
 
-const highlightThumbnail = () => {
-    thumbnailContainer
-        .querySelectorAll('div.highlighted')
-        .forEach(el => el.classList.remove('highlighted'));
-    console.log(slideGallery.scrollLeft);
-    const slideWidth = document.querySelector('.slides iframe').clientWidth
-    const index = Math.floor(slideGallery.scrollLeft / slideWidth);
-    thumbnailContainer
-        .querySelector(`div[data-id="${index}"]`)
-        .classList.add('highlighted');
-    console.log(index);
-    // slides
-    //     .querySelectorAll('iframe.highlighted')
-    //     .forEach(el => el.classList.remove('highlighted'));
-    // slides
-    //     .querySelector(`iframe[data-id="${index}"]`)
-    //     .classList.add('highlighted');
-};
+$(function(){
+    if($('body').is('.books-page')){
+        console.log("Books Page!");
 
-const scrollToElement = el => {
-  const index = parseInt(el.dataset.id, 10);
-  const slideWidth = document.querySelector('.slides iframe').clientWidth
-  slideGallery.scrollTo(index * slideWidth, 0);
-};
+        $('.book')
+        .on('click', '.active', nextPage)
+        .on('click', '.flipped', prevPage);
 
-thumbnailContainer.innerHTML += [...slides]
-  .map((slide, i) => `<div data-id="${i}" class=""></div>`)
-  .join('');
+        var hammertime = new Hammer($('.book')[0]);
+        hammertime.on("swipeleft", nextPage);
+        hammertime.on("swiperight", prevPage);
 
-thumbnailContainer.querySelectorAll('div').forEach(el => {
-  el.addEventListener('click', () => scrollToElement(el));
+        function prevPage() {
+        
+        $('.flipped')
+            .last()
+            .removeClass('flipped')
+            .addClass('active')
+            .siblings('.page')
+            .removeClass('active');
+        }
+        function nextPage() {
+        
+        $('.active')
+            .removeClass('active')
+            .addClass('flipped')
+            .next('.page')
+            .addClass('active')
+            .siblings();
+            
+            
+        }
+
+        // end of flipbook 3
+    }
 });
-
-slideGallery.addEventListener('scroll', e => highlightThumbnail());
-
-highlightThumbnail();
 
 // window.addEventListener('scroll', function(element) {
 //     console.log(window.scrollY)

@@ -6,20 +6,18 @@
     --heart-accent: #f00;
 }  
 
-/* flipbook 2 */
-
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap');
 :root {
-  /* spacing */
-  /* this is what defines the global scale */
-  --baseline: 12px;
-  /* fonts */
+  --baseline: 13.5px;
   --book-title: 'Tulpen One', sans-serif;
   --title: 'Cormorant Garamond', serif;
   --body: 'Cormorant Garamond', serif;
   --base-size: var(--baseline) * 1.2;
 }
-* {
+
+/* flipbook 2
+
+/* {
   box-sizing: border-box;
 }
 .cover {
@@ -50,14 +48,14 @@
   height: 70vh;
   width: 100%;
 }
-.book__page--2 {
+.book__page--right {
   position: absolute;
   right: 0;
   pointer-events: none;
   transform-style: preserve-3d;
   background-color: var(--back);
 }
-.book__page--4 {
+.book__page--end {
   cursor: pointer;
   padding: 0 calc(var(--baseline) * 3);
 }
@@ -185,9 +183,7 @@
   transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: rotateY(-180deg);
 }
-.book-alert {
-  display: none;
-}
+ */
 /* flipbook 2 */
 
 body {
@@ -295,10 +291,10 @@ nav a {
 }
 
 nav a.current{
-    /* Set text decoration, transformation, and underline properties */
-        text-transform: uppercase;
-        text-decoration: underline wavy var(--font) 2px;
-        text-underline-offset: 5px;
+  /* Set text decoration, transformation, and underline properties */
+  text-transform: uppercase;
+  text-decoration: underline wavy var(--font) 2px;
+  text-underline-offset: 5px;
 }
     
 .filters {
@@ -546,6 +542,180 @@ footer i {
     color: var(--heart-accent)
 }
 
+
+/* flipbook 3 */
+.shadow {
+  width: 90%;
+  height: 70vh;
+  margin: 2vh 5% 0% 5%;
+  perspective: 1000px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+.shadow .cover-img {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+.shadow .last-page {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  padding: 5% 2.5% 2.5%;
+}
+.shadow .last-page .book-copyright {
+  width: 88%;
+}
+.scene {
+  width: 50%;
+  height: 100%;
+  margin: 0% 0% 0% 50%;
+  perspective: 1000px;
+}
+.book {
+  position: relative;
+  width: 100.5%;
+  height: 100%;
+  transform-style: preserve-3d;
+  font-family: var(--book-title);
+  text-align: center;
+}
+.page {
+  cursor: pointer;
+  position: absolute;
+  color: black;
+  width: 100%;
+  height: 100%;
+  transition: 1.5s transform;
+  transform: translateZ(-1px);
+  transform-style: preserve-3d;  
+  transform-origin: left center;
+}
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10% 5% 5%;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  background: var(--back);
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  background: var(--back);
+}
+.book-img{
+  height: 100%;
+  width: 100%;
+}
+.book-title {
+  font-family: var(--book-title);
+  font-size: calc(var(--base-size) * 3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--font);
+  margin-top: calc(var(--baseline) * 2);
+  margin-bottom: calc(var(--baseline) * 1);
+}
+.book-author {
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 1.2);
+  font-weight: 100;
+  text-transform: uppercase;
+  color: var(--font);
+  border-top: 1px solid var(--font);
+  border-bottom: 1px solid var(--font);
+  display: inline-block;
+  padding: calc(var(--baseline) / 2) calc(var(--baseline) / 5);
+  margin-bottom: calc(var(--baseline) * 1);
+}
+.book-summary {
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 1.1);
+  color: var(--font);
+  margin-bottom: calc(var(--baseline) * 2);
+}
+.book-stars {
+  color: var(--font);
+  font-size: calc(var(--base-size) * 2.5);
+  letter-spacing: 10px;
+  margin-bottom: calc(var(--baseline) * 2);
+}
+.book-credits {
+  font-family: var(--title);
+  text-transform: uppercase;
+  font-size: calc(var(--base-size) * 0.8);
+  margin-bottom: calc(var(--baseline) * 2);
+  letter-spacing: 1px;
+  color: var(--font);
+}
+.book-credits span {
+  display: block;
+  font-size: calc(var(--base-size) * 1.2);
+  letter-spacing: 0;
+}
+.book-copyright {
+  position: absolute;
+  width: 90%;
+  bottom: calc(var(--baseline) * 1);
+  font-family: var(--title);
+  font-size: calc(var(--base-size) * 0.8);
+  text-transform: uppercase;
+  color: var(--font);
+}
+.back {
+  transform: rotateY(180deg);
+}
+.page.active {
+  z-index: 0;
+  transform: translateZ(0);
+  /* box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3); */
+}
+.page.flipped {
+  z-index: 0;
+  transform: translateZ(0) rotateY(-180deg);
+  /* box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3); */
+}
+.page.flipped:last-of-type {
+  z-index: 1;
+}
+
+p {
+  margin: 0 0 0.1em;
+  text-indent: 1em;
+}
+
+.qr {
+  margin: 50px auto;
+  max-width: 50%;
+}
+.qr img {
+  display: block;
+}
+.book-alert {
+  display: none;
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+  .scene {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+  }
+}
+
+/* end of flipbook 3 */
+
 @media (min-width: 500px) {
     nav ul li {
         font-size: 28px;
@@ -583,7 +753,7 @@ footer i {
 }
 
 @media (orientation: portrait) {
-  .cover {
+  .shadow {
     display: none;
   }
   .book-alert {
@@ -593,14 +763,6 @@ footer i {
 }
 
 @media (orientation: landscape) and (max-width: 1000px) {
-  .cover {
-    display: block;
-    width: 90vw;
-    height: 90vh;
-  }
-  .book__page img {
-    height: 90vh;
-  }
   .book-alert {
     display: none;
   }
@@ -608,6 +770,6 @@ footer i {
     display: none !important;
   }
   :root {
-    --baseline: 8px;
+    --baseline: 11px;
   }
 }
