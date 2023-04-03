@@ -662,7 +662,7 @@ footer i {
 }
 .book-copyright {
   position: absolute;
-  width: 90%;
+  width: 88%;
   bottom: calc(var(--baseline) * 1);
   font-family: var(--title);
   font-size: calc(var(--base-size) * 0.8);
