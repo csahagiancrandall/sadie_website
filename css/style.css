@@ -774,6 +774,6 @@ and (orientation : portrait) {
     height: 92vh;
   }
   :root {
-    --baseline: calc(min(1.85vh, 1.14vw));
+    --baseline: calc(min(1.75vh, 1.14vw));
   }
 }
