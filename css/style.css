@@ -759,7 +759,7 @@ and (orientation : portrait) {
   }
   .book-alert {
     display: block;
-    height: calc(100vh - 3vh - 2vh - 188px);
+    height: 60vh;
   }
 }
 
@@ -771,7 +771,7 @@ and (orientation : portrait) {
     display: none !important;
   }
   .shadow {
-    height: 95vh;
+    height: 92vh;
   }
   :root {
     --baseline: calc(min(1.85vh, 1.14vw));
