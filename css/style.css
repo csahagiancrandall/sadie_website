@@ -580,6 +580,7 @@ footer i {
   transform-style: preserve-3d;
   font-family: var(--book-title);
   text-align: center;
+  word-wrap: break-word;
 }
 .page {
   cursor: pointer;
@@ -762,14 +763,17 @@ and (orientation : portrait) {
   }
 }
 
-@media (orientation: landscape) and (max-width: 1000px) {
+@media (orientation: landscape) {
   .book-alert {
     display: none;
   }
   #totop {
     display: none !important;
   }
+  .shadow {
+    height: 95vh;
+  }
   :root {
-    --baseline: 11px;
+    --baseline: calc(min(1.85vh, 1.14vw));
   }
 }
