@@ -459,7 +459,9 @@ main img.oval {
     border-radius: 30px;
     padding: 20px;
     object-fit: cover;
-}
+    min-width: 100%;
+    min-height: 100%;
+  }
 
 .portrait {
     width: 23%;
