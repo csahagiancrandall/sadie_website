@@ -768,6 +768,9 @@ and (orientation : portrait) {
   .container {
     width: 80vw;
   }
+  .index-text {
+    width: 90vw;
+  }
 }
 
 @media (orientation: landscape) {
