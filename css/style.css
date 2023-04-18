@@ -434,17 +434,25 @@ main img.oval {
   }
 
 .container {
-    display: block;
-    background-color: var(--font);
-    border-radius: 30px;
-    width: 80vw;
-    height: 45vw;
-    margin: 5px auto 50px;
-    outline: dotted;
-    outline-offset: 7px;
-    outline-width: 5px;
-    outline-color: var(--font);
-    text-align: center; 
+  display: block;
+  background-color: var(--font);
+  border-radius: 30px;
+  margin: 5px auto 50px;
+  outline: dotted;
+  outline-offset: 7px;
+  outline-width: 5px;
+  outline-color: var(--font);
+  text-align: center; 
+}
+
+.index-text {
+  width: 60vw;
+  text-align: justify;
+  margin: 0px auto;
+}
+
+.index-text p {
+  margin-bottom: 15px;
 }
 
 .gallery {
@@ -757,19 +765,22 @@ and (orientation : portrait) {
     display: block;
     height: 60vh;
   }
+  .container {
+    width: 80vw;
+  }
 }
 
 @media (orientation: landscape) {
   .book-alert {
     display: none;
   }
-  #totop {
-    display: none !important;
-  }
   .shadow {
     height: 92vh;
   }
   :root {
     --baseline: calc(min(1.75vh, 1.14vw));
+  }
+  .container {
+    height: 77vh;
   }
 }

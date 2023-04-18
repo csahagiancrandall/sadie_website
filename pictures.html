@@ -18,6 +18,9 @@
 </head>
 
 <body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="js/loadtheme.js"></script>
+  <script src="https://kit.fontawesome.com/9544dd565c.js" crossorigin="anonymous"></script>
   <header>
     <nav>
       <ul>
@@ -27,7 +30,7 @@
         <li><a href="books.html">Books</a></li>
       </ul>
     </nav>
-    <h1>Pictures</h1>
+    <h1 class="typing" id="pictures"></h1>
   </header>
 
   <main>
@@ -77,6 +80,9 @@
         <a href="images/pastel_star_jumping_sadie_cropped.png" data-lightbox="all" class="landscape friends">
           <img src="images/pastel_star_jumping_sadie_cropped.png">
         </a>
+        <a href="images/tongue_out_sadie.jpg" data-lightbox="all" class="portrait selfie friends">
+          <img src="images/tongue_out_sadie.jpg">
+        </a>
         <!-- <img src="images/sandie_selfie_sadie_3.HEIC" class="portrait family selfie"> -->
         <a href="images/black_sadie.png" data-lightbox="all" class="portrait headshot">
           <img src="images/black_sadie.png">
@@ -116,8 +122,6 @@
   
   <button onclick="changeTheme()" id="theme">Change Theme</button>
   <button onclick="topFunction()" id="totop"><i class="fa-solid fa-heart"></i></button>
-  <script src="https://kit.fontawesome.com/9544dd565c.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script src="js/js.js"></script>
   <script src="dist/js/lightbox.js"></script>
 </body>

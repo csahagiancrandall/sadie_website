@@ -1,3 +1,35 @@
+// Typing 
+var i = 0;
+var speed = 150;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.querySelector(".typing").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+if (document.getElementById('index')) {
+    var txt = ' Sadie Vieira Quinn ';
+    window.addEventListener('load', typeWriter())
+}
+
+if (document.getElementById('pictures')) {
+    var txt = ' Pictures ';
+    window.addEventListener('load', typeWriter())
+}
+
+if (document.getElementById('songs')) {
+    var txt = ' Songs ';
+    window.addEventListener('load', typeWriter())
+}
+
+if (document.getElementById('books')) {
+    var txt = ' Books ';
+    window.addEventListener('load', typeWriter())
+}
+
 // Change Color Theme
 function changeTheme() {
     console.log("Color scheme changed!")
@@ -122,24 +154,6 @@ function initializeTheme(theme) {
         document.documentElement.style.setProperty('--heart-accent', '#f7a072');        
     }
 }
-
-function loadTheme() {
-    var body = document.querySelector("body")
-    if (localStorage.getItem("colorTheme")) {
-        let theme = localStorage.getItem("colorTheme")
-        console.log("the theme is: " + theme);
-        initializeTheme(theme)
-    }
-    else {
-        let random = Math.floor(Math.random() * 6).toString()
-        console.log("No color theme found. Setting to random - theme" + random);
-        let theme = "theme" + random
-        localStorage.setItem("colorTheme", theme)
-        initializeTheme(theme)
-    }
-}
-
-loadTheme()
 
 // totop button
 var totop = document.querySelector("#totop")
