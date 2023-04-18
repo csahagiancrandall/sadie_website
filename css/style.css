@@ -446,7 +446,6 @@ main img.oval {
 }
 
 .index-text {
-  width: 60vw;
   text-align: justify;
   margin: 0px auto;
 }
@@ -785,5 +784,8 @@ and (orientation : portrait) {
   }
   .container {
     height: 77vh;
+  }
+  .index-text {
+    width: 60vw;
   }
 }
