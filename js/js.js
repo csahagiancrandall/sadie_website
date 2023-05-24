@@ -340,43 +340,5 @@ $(function(){
             
             
         }
-
-        // end of flipbook 3
     }
 });
-
-// window.addEventListener('scroll', function(element) {
-//     console.log(window.scrollY)
-//     if (window.scrollY < oldScrollY) {
-//         console.log(window.scrollY)
-//         console.log('scrolling up')
-//         oldScrollY = window.scrollY;
-
-//         // if (songPageIndex < 1) {
-//         //     return;
-//         // }
-//         // songPageIndex--;
-//         // sections.forEach((section, i) => {
-//         //     if (i === songPageIndex) {
-//         //         console.log("scrolling section " + i + " into view");
-//         //         section.scrollIntoView({behavior: 'smooth'});
-//         //     }
-//         // })
-//     }
-//     else if (window.scrollY > oldScrollY) {
-//         console.log(window.scrollY)
-//         console.log('scrolling down')
-//         oldScrollY = window.scrollY;
-//         sections[0].scrollIntoView({behavior: 'smooth'});
-//         // if (index > 2) {
-//         //     return;
-//         // }
-//         // songPageIndex++;
-//         // sections.forEach((section, i) => {
-//         //     if (i === songPageIndex) {
-//         //         console.log("scrolling section " + i + " into view");
-//         //         section.scrollIntoView({behavior: 'smooth'});
-//         //     }
-//         // })
-//     }
-// });

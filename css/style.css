@@ -460,6 +460,7 @@ main img.oval {
     justify-content: center;
     background: var(--font);
     border-radius: 30px;
+    font-family: 'Libre Bodoni', serif;
 }
 
 .gallery img {
@@ -468,6 +469,7 @@ main img.oval {
     object-fit: cover;
     min-width: 100%;
     min-height: 100%;
+    font-family: 'Libre Bodoni', serif;
   }
 
 .portrait {
